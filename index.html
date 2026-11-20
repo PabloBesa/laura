@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CTS-6 · Escala de síntomas del túnel carpiano</title>
+<meta name="description" content="Escala de síntomas del síndrome del túnel carpiano de 6 ítems (CTS-6), versión validada al español de Chile.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@500;600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1e2530; --mut:#5b6472; --line:#d7dee6; --soft:#f5f7fb; --bg:#ffffff;
+    --navy:#0f2340; --accent:#1568c4; --accentBg:#e6edfa;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ink:#e8ecf2; --mut:#a3adbb; --line:#2c3746; --soft:#18202b; --bg:#10161f;
+      --navy:#0a1729; --accent:#6aa5ec; --accentBg:#1b2c45;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#e8ecf2; --mut:#a3adbb; --line:#2c3746; --soft:#18202b; --bg:#10161f;
+    --navy:#0a1729; --accent:#6aa5ec; --accentBg:#1b2c45;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:'Public Sans',system-ui,sans-serif;color:var(--ink);background:var(--soft);line-height:1.45}
+  header{background:var(--navy);color:#fff;padding:22px 16px 20px}
+  .wrap{max-width:760px;margin:0 auto;padding:0 16px}
+  header .wrap{padding:0}
+  h1{font-family:'Newsreader',serif;font-weight:600;font-size:1.55rem;margin:0 0 4px;line-height:1.2}
+  .sub{font-size:.88rem;color:rgba(255,255,255,.8)}
+  main{padding:18px 0 140px}
+  .intro{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:.95rem;margin-bottom:16px}
+  .intro p{margin:0 0 6px}.intro p:last-child{margin:0}
+  .grp{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:16px}
+  .grp h2{font-family:'Newsreader',serif;font-weight:600;font-size:1.12rem;margin:0 0 12px;line-height:1.3}
+  .item{padding:12px 0;border-top:1px solid var(--line)}
+  .item:first-of-type{border-top:0;padding-top:0}
+  .q{font-weight:600;margin-bottom:8px;display:flex;gap:8px;align-items:baseline}
+  .q .n{color:var(--mut);font-weight:600;font-size:.85rem;min-width:1.2em}
+  .opts{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+  .opt{border:1.5px solid var(--line);background:var(--bg);color:var(--ink);border-radius:10px;padding:10px 4px;font:inherit;font-size:.85rem;
+       cursor:pointer;text-align:center;line-height:1.2;min-height:48px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+  .opt .v{font-size:.72rem;color:var(--mut);font-weight:600}
+  .opt:hover{border-color:var(--accent)}
+  .opt:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+  .opt[aria-pressed="true"]{border-color:var(--accent);background:var(--accentBg);color:var(--accent);font-weight:700}
+  .opt[aria-pressed="true"] .v{color:var(--accent)}
+  @media (max-width:520px){
+    .opts{grid-template-columns:1fr;gap:6px}
+    .opt{flex-direction:row;justify-content:space-between;padding:12px 14px;text-align:left;min-height:46px}
+  }
+  .result{position:fixed;left:0;right:0;bottom:0;background:var(--bg);border-top:1px solid var(--line);box-shadow:0 -4px 18px rgba(0,0,0,.08);padding:12px 16px}
+  .result .wrap{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:0}
+  .score{font-family:'Newsreader',serif;font-weight:600;font-size:2rem;line-height:1;color:var(--navy)}
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .score{color:#fff} }
+  :root[data-theme="dark"] .score{color:#fff}
+  .score small{font-size:1rem;color:var(--mut);font-weight:500}
+  .rlab{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--mut);font-weight:700}
+  .prog{font-size:.85rem;color:var(--mut)}
+  .btn{margin-left:auto;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:10px;padding:10px 14px;font:inherit;font-size:.88rem;cursor:pointer}
+  .btn:hover{border-color:var(--accent)}
+  .how{font-size:.85rem;color:var(--mut);margin:4px 0 16px}
+  footer{font-size:.82rem;color:var(--mut);border-top:1px solid var(--line);padding-top:14px;margin-top:8px}
+  footer p{margin:0 0 6px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>Escala de síntomas del síndrome del túnel carpiano de 6 ítems</h1>
+    <div class="sub">The 6-item CTS symptom scale (CTS-6) · versión en español de Chile</div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="intro">
+    <p>Las siguientes preguntas se refieren a los síntomas que ha tenido durante un período normal de 24 horas en las últimas dos semanas.</p>
+    <p><b>Marque una sola alternativa para cada síntoma.</b></p>
+  </div>
+
+  <section class="grp" aria-labelledby="g1">
+    <h2 id="g1">¿Con qué intensidad ha tenido los siguientes síntomas en su mano?</h2>
+    <div id="grp1"></div>
+  </section>
+
+  <section class="grp" aria-labelledby="g2">
+    <h2 id="g2">¿Con qué frecuencia se ha despertado durante la noche debido a los siguientes síntomas en su mano?</h2>
+    <div id="grp2"></div>
+  </section>
+
+  <p class="how">Cada respuesta vale de 1 a 5 puntos. El puntaje final es el promedio de los 6 ítems (rango 1 a 5); un puntaje mayor indica síntomas más severos.</p>
+
+  <footer>
+    <p><b>Validación al español de Chile:</b> <span id="autora">Laura Vergara</span>. Artículo enviado para publicación; pendiente de aprobación.</p>
+    <p><b>Instrumento original:</b> Atroshi I, Lyrén PE, Gummesson C. The 6-item CTS symptoms scale: a brief outcomes measure for carpal tunnel syndrome. Qual Life Res. 2009;18(3):347–358.</p>
+    <p>Esta página no guarda ni envía sus respuestas.</p>
+  </footer>
+</main>
+
+<div class="result" role="status" aria-live="polite">
+  <div class="wrap">
+    <div>
+      <div class="rlab">Puntaje CTS-6</div>
+      <div class="score" id="score">—<small> / 5</small></div>
+    </div>
+    <div class="prog" id="prog">0 de 6 respondidas</div>
+    <button class="btn" id="reset" type="button">Reiniciar</button>
+  </div>
+</div>
+
+<script>
+  const INTENSIDAD = ["Ninguna","Leve","Moderada","Severa","Muy severa"];
+  const FRECUENCIA = ["Nunca","Una vez","2 o 3 veces","4 o 5 veces","Más de 5 veces"];
+  const ITEMS = [
+    { g:1, txt:"Dolor durante la noche", opts:INTENSIDAD },
+    { g:1, txt:"Dolor durante el día", opts:INTENSIDAD },
+    { g:1, txt:"Adormecimiento u hormigueo durante la noche", opts:INTENSIDAD },
+    { g:1, txt:"Adormecimiento u hormigueo durante el día", opts:INTENSIDAD },
+    { g:2, txt:"Dolor", opts:FRECUENCIA },
+    { g:2, txt:"Adormecimiento u hormigueo", opts:FRECUENCIA },
+  ];
+  const resp = new Array(ITEMS.length).fill(null);
+
+  ITEMS.forEach((it,i)=>{
+    const box=document.createElement("div"); box.className="item";
+    box.innerHTML=`<div class="q" id="q${i}"><span class="n">${i+1}.</span><span>${it.txt}</span></div>
+      <div class="opts" role="group" aria-labelledby="q${i}">
+        ${it.opts.map((o,j)=>`<button type="button" class="opt" aria-pressed="false" data-i="${i}" data-v="${j+1}"><span>${o}</span><span class="v">${j+1}</span></button>`).join("")}
+      </div>`;
+    document.getElementById("grp"+it.g).appendChild(box);
+  });
+
+  document.addEventListener("click",e=>{
+    const b=e.target.closest(".opt"); if(!b) return;
+    const i=+b.dataset.i, v=+b.dataset.v;
+    resp[i] = resp[i]===v ? null : v;
+    b.parentElement.querySelectorAll(".opt").forEach(x=>x.setAttribute("aria-pressed", String(+x.dataset.v===resp[i])));
+    render();
+  });
+  document.getElementById("reset").addEventListener("click",()=>{
+    resp.fill(null);
+    document.querySelectorAll(".opt").forEach(x=>x.setAttribute("aria-pressed","false"));
+    render(); window.scrollTo({top:0,behavior:"smooth"});
+  });
+
+  function render(){
+    const n=resp.filter(v=>v!==null).length;
+    const sc=document.getElementById("score");
+    if(n===ITEMS.length){
+      const media=resp.reduce((a,b)=>a+b,0)/ITEMS.length;
+      sc.innerHTML=`${media.toFixed(1).replace(".",",")}<small> / 5</small>`;
+      document.getElementById("prog").textContent="Escala completa";
+    } else {
+      sc.innerHTML=`—<small> / 5</small>`;
+      document.getElementById("prog").textContent=`${n} de ${ITEMS.length} respondidas`;
+    }
+  }
+  render();
+</script>
+</body>
+</html>
